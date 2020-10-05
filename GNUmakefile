@@ -39,7 +39,7 @@ CFLAGS := -g -ggdb -O
 LDFLAGS := 
 CFILES := $(wildcard *.c)
 OBJS := $(patsubst %.c, %.o, $(CFILES))
-PROGRAM := helloworld
+PROGRAM := bitybit
 RM := rm -f
 INSTALAR := cp $(PROGRAM) /usr/bin/
 
