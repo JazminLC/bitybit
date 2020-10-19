@@ -16,7 +16,7 @@ int main(int argc, char const **argv){
 	//printf("%d\n",n);
 	//sprintf(mystring,"%s",argv[1]);
 	//printf("%s\n",mystring);
-	int *array = malloc(n * sizeof(int));
+	int *array = malloc(n *4);
 
 	for (int i = 0; i < n; ++i){
 		array[i]=i+1;
