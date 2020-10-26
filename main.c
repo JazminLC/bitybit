@@ -18,12 +18,12 @@ int main(int argn, char **argv){
 
   //printf("%i\t%i\t%le\n",c,i,d);
 
-  printf("%i\n",c);
+  printf("Número: %i\n",c);
   print_bit(c,0);
   print_bit(c,1);
 
   int n=0x12;
-  printf("%i\n",n);
+  printf("\nNúmero: %i\n",n);
   print_bit(n,0);
   print_bit(n,1);
 
