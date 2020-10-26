@@ -1,2 +1,2 @@
-# bitybit
-Working at low level 
+# bitbit
+Working at low level with bits

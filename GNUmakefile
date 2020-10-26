@@ -1,4 +1,3 @@
-#
 # $Id$
 #
 # MAKEFILE GNU MAKE for Linux Version 1.0
@@ -36,10 +35,10 @@
 CC := gcc
 LINKER := gcc
 CFLAGS := -g -ggdb -O
-LDFLAGS := 
+LDFLAGS :=
 CFILES := $(wildcard *.c)
 OBJS := $(patsubst %.c, %.o, $(CFILES))
-PROGRAM := bitybit
+PROGRAM := bitbit
 RM := rm -f
 INSTALAR := cp $(PROGRAM) /usr/bin/
 
@@ -66,7 +65,7 @@ install:
 # Make depend
 
 $(OBJS): %.o: %.c
-	$(CC) -c $< 
+	$(CC) -c $<
 	@echo -en "\n"
 
 $(PROGRAM): $(OBJS)
