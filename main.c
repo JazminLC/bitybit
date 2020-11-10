@@ -11,6 +11,9 @@ int main(int argn, char **argv){
   char c; // 1 byte = 8 bits
   int i;  // 4 bytes = 32 bits
   double d; // 8 bytes = 64 bits
+  char *msg;
+  int key;
+  msg=malloc(4);
 
   c = 0x01; //''; //BIG 1000 0000   LIT 0000 0001
   i = 1024;
@@ -18,14 +21,27 @@ int main(int argn, char **argv){
 
   //printf("%i\t%i\t%le\n",c,i,d);
 
-  printf("Número: %i\n",c);
-  print_bit(c,0);
-  print_bit(c,1);
+  //printf("Número: %i\n",c);
+  //print_bit(c,0);
+  //print_bit(c,1);
 
-  int n=0x12;
-  printf("\nNúmero: %i\n",n);
-  print_bit(n,0);
-  print_bit(n,1);
+  //printf("%i\n",sizeof(i) );
+
+  key=39181333;
+
+  i = packing('h','o','l','a');
+  printf("%i\n",i);
+  i+=key;
+  unpacking(i,msg);
+  printf("%s\n", msg);
+  i-=key;
+  unpacking(i,msg);
+  printf("%s\n", msg);
+  free(msg);
+  //char n=0x12;
+  //printf("\nNúmero: %i\n",n);
+  //print_bit(n,0);
+  //print_bit(n,1);
 
 //  char *mystring;
 //  int *mypointer;

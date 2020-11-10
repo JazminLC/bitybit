@@ -7,6 +7,9 @@ extern "C" {
 
 int print_bit(char c, int o);
 
+int packing (char a, char b, char c, char d);
+int unpacking(int i,char *msg);
+
 #ifdef __cplusplus
 } /* extern "C" */
 #endif /* __cplusplus */

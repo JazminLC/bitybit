@@ -4,6 +4,77 @@
 #include <stdlib.h>
 #include <math.h>
 
+int packing (char a, char b, char c, char d){
+  int zip=0x00000000;
+  int mask;
+  int A;
+
+  mask=0x000000FF;//Para que respete los valores encendidos.
+  A=(int)a & mask;
+  A=A <<24;
+  mask=0xFF000000;
+  A=A&mask;
+  zip=zip | A;
+
+  mask=0x000000FF;
+  A=(int)b & mask;
+  A=A <<16;
+  mask=0x00FF0000;
+  A=A&mask;
+  zip=zip | A;
+  
+  mask=0x000000FF;
+  A=(int)c & mask;
+  A=A <<8;
+  mask=0x0000FF00;
+  A=A&mask;
+  zip=zip | A;
+
+  mask=0x000000FF;
+  A=(int)d & mask;
+  zip=zip | A;
+  
+  return zip;
+}
+
+int unpacking(int i, char *msg){
+  //char msg[4];
+  int mask;
+  int a;
+  char c;
+
+  mask=0xFF000000;
+  a=(i & mask)>>24;
+  mask=0x000000FF;
+  a=a&mask;
+  c=(char)a;
+  msg[0]=c;
+
+  mask=0x00FF0000;
+  a=(i & mask)>>16;
+  mask=0x000000FF;
+  a=a&mask;
+  c=(char)a;
+  msg[1]=c;
+
+  mask=0x0000FF00;
+  a=(i & mask)>>8;
+  mask=0x000000FF;
+  a=a&mask;
+  c=(char)a;
+  msg[2]=c;
+
+  a=i & mask;
+  a=a&mask;
+  c=(char)a;
+  msg[3]=c;
+
+  return 1;
+
+}
+
+
+
 int print_bit(char c, int o){
   //255   -> 1111 1111
   int i;
