@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "bit.h"
+#include "stream.h"
 
 /*
 Modificar el codigo para que mediante la linea de argumentos les pasen la cantidad de espacios a asignar en la memoria RAM y dentro del programa reserven esa N cantidad de enteros en la variable mypointer y a traves de un for asignen valores secuenciales de 0 a N y los imprima.
@@ -27,7 +28,7 @@ int main(int argn, char **argv){
 
   //printf("%i\n",sizeof(i) );
 
-  key=39181333;
+  key=1111111;
 
   i = packing('h','o','l','a');
   printf("%i\n",i);
@@ -37,6 +38,7 @@ int main(int argn, char **argv){
   i-=key;
   unpacking(i,msg);
   printf("%s\n", msg);
+  packIn2Double(1,2);
   free(msg);
   //char n=0x12;
   //printf("\nNúmero: %i\n",n);

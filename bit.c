@@ -180,3 +180,22 @@ int print_bit(char c, int o){
 //1010 1010             -> 0xAA
   return 1;
 }
+
+double packIn2Double(int a, int b){
+  long long D;
+  long long MASK=0x0000001;
+  long long E;
+  double F;
+  MASK=0xFFFFFFFF00000000;
+  E=(a<<32);//&MASK;
+
+  D=(E|D)&MASK;
+
+  MASK=0x00000000FFFFFFFF;
+  E=b;//&MASK;
+  D=(b|D);
+
+  F=(double)D;
+  printf("%lf\n",F);
+  return F;
+}
