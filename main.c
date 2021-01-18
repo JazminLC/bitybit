@@ -1,19 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "bit.h"
+#include "numeric.h"
 #include "stream.h"
-
-/*
-Modificar el codigo para que mediante la linea de argumentos les pasen la cantidad de espacios a asignar en la memoria RAM y dentro del programa reserven esa N cantidad de enteros en la variable mypointer y a traves de un for asignen valores secuenciales de 0 a N y los imprima.
-*/
 
 
 int main(int argn, char **argv){
-  char c; // 1 byte = 8 bits
-  int i;  // 4 bytes = 32 bits
-  double d; // 8 bytes = 64 bits
   char *msg;
   int key;
+  int p,q;
+  srand(time(NULL));
+  p= compute_prime(2048);
+  q= compute_prime(2048);
+
+  printf("p=%i,q=%i\n",p,q);
+  
+  return 1;
+}
+
+
+
+/*
   msg=malloc(4);
 
   c = 0x01; //''; //BIG 1000 0000   LIT 0000 0001
@@ -57,5 +65,4 @@ int main(int argn, char **argv){
 //  printf("%s\n",mystring);
 //  printf("%p\n",&mystring);
 //  free(mystring);
-  return 1;
-}
+  */
