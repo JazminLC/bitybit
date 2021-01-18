@@ -3,19 +3,22 @@
 #include <time.h>
 #include "bit.h"
 #include "numeric.h"
-#include "stream.h"
 
 
 int main(int argn, char **argv){
   char *msg;
   int key;
-  int p,q;
+  int p,q,n,phi,e;
   srand(time(NULL));
   p= compute_prime(2048);
   q= compute_prime(2048);
-
-  printf("p=%i,q=%i\n",p,q);
+  n=p*q;
+  phi=(p-1)*(q-1);
+  e=compute_prime(phi);
   
+  printf("p\tp\tn\tphi\t\n");
+  printf("%i\t%i\t%i\t%i\t\n",p,q,n,phi);
+
   return 1;
 }
 
